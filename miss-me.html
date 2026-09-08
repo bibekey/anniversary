@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>If You Miss Me</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .grid-btns { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .msg-card { background: var(--card-bg); border: 1px solid var(--card-border); padding: 25px; border-radius: 15px; text-align: center; cursor: pointer; transition: all 0.3s; }
+    .msg-card:hover { border-color: var(--primary-color); transform: translateY(-3px); }
+    .hidden-content { display: none; margin-top: 15px; font-size: 0.95rem; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; }
+  </style>
+</head>
+<body>
+  <div id="password-overlay"><div class="pass-card"><h2>Welcome My Love 💕</h2><input type="password" id="pass-input"><button onclick="checkPassword()">Unlock</button><p id="pass-error" class="error-msg">Incorrect password!</p></div></div>
+
+  <header>
+    <a href="index.html" class="logo">Forever Yours ✨</a>
+    <nav>
+      <a href="index.html">Memories</a>
+      <a href="letter.html">Letter</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="reasons.html">100 Reasons</a>
+      <a href="miss-me.html" class="active">If You Miss Me</a>
+      <a href="surprise.html">Surprise</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1 class="page-title">🌙 If You Ever Miss Me</h1>
+    <p class="page-subtitle">Open these whenever you need a little piece of my love.</p>
+
+    <div class="grid-btns">
+      <div class="msg-card" onclick="toggleMsg(1)">
+        <h3>😢 Read when sad</h3>
+        <div id="msg-1" class="hidden-content">Remember that storms don't last forever. Take a deep breath, I'm sending you the tightest hug right now!</div>
+      </div>
+      <div class="msg-card" onclick="toggleMsg(2)">
+        <h3>💭 Read when miss me</h3>
+        <div id="msg-2" class="hidden-content">Close your eyes and place your hand on your heart. I'm right there with you in spirit, counting down until I see you next.</div>
+      </div>
+      <div class="msg-card" onclick="toggleMsg(3)">
+        <h3>⚡ Read when we fight</h3>
+        <div id="msg-3" class="hidden-content">Even when we disagree, I love you more than words can express. It's always us against the problem, never you against me.</div>
+      </div>
+      <div class="msg-card" onclick="toggleMsg(4)">
+        <h3>😊 Read for a smile</h3>
+        <div id="msg-4" class="hidden-content">Fun fact: Someone in the world thinks you are the most gorgeous and perfect person ever. (Spoiler: It's ME!)</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleMsg(id) {
+      const el = document.getElementById(`msg-${id}`);
+      el.style.display = el.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>

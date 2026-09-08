@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our First Anniversary ❤️</title>
+<meta name="description" content="A private collection of our first year of memories.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root{
+  --rose:#b85c70;--dark:#24161b;--cream:#fff8f5;--pink:#f6dce1;
+  --muted:#806c71;--white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Poppins,sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+button{font:inherit}
+.hidden{display:none!important}
+
+/* Password */
+#lockScreen{
+  position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;
+  padding:20px;background:radial-gradient(circle at 20% 20%,#f8d9df,transparent 35%),
+  radial-gradient(circle at 80% 80%,#eac1ca,transparent 35%),#fff8f5;
+}
+.lock-card{
+  width:min(430px,100%);padding:45px 30px;text-align:center;background:rgba(255,255,255,.86);
+  border:1px solid rgba(184,92,112,.2);border-radius:28px;box-shadow:0 25px 80px rgba(83,43,52,.16);
+  backdrop-filter:blur(14px)
+}
+.heart{font-size:48px;animation:pulse 1.8s infinite}
+.lock-card h1{font-family:"Cormorant Garamond",serif;font-size:42px;margin:12px 0 5px}
+.lock-card p{color:var(--muted);font-size:14px;margin-bottom:25px}
+.password-box{display:flex;gap:9px}
+.password-box input{flex:1;min-width:0;border:1px solid #e4c8ce;border-radius:12px;padding:14px;text-align:center;letter-spacing:7px;font-size:18px;outline:none}
+.password-box button{border:0;background:var(--rose);color:#fff;border-radius:12px;padding:0 20px;cursor:pointer}
+.error{color:#b33d59;font-size:12px;margin-top:12px;min-height:16px}
+
+/* Main */
+#site{display:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;
+background:linear-gradient(to bottom,rgba(35,20,26,.65),transparent);color:white}
+.logo{font-family:"Cormorant Garamond",serif;font-size:27px;font-weight:700}
+nav a{color:white;text-decoration:none;margin-left:25px;font-size:13px}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:white;position:relative;
+background:linear-gradient(rgba(28,13,19,.45),rgba(28,13,19,.65)),url("https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1800&q=85") center/cover fixed}
+.hero-content{padding:90px 20px 40px;max-width:850px}
+.eyebrow{text-transform:uppercase;letter-spacing:5px;font-size:12px}
+.hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(62px,11vw,120px);line-height:.85;margin:20px 0}
+.hero p{font-family:"Cormorant Garamond",serif;font-size:25px}
+.scroll{margin-top:55px;font-size:12px;letter-spacing:3px;opacity:.8}
+
+.section{padding:95px 6%;max-width:1250px;margin:auto}
+.section-head{text-align:center;margin-bottom:45px}
+.section-head span{color:var(--rose);font-size:12px;text-transform:uppercase;letter-spacing:3px}
+.section-head h2{font:600 clamp(38px,5vw,58px) "Cormorant Garamond",serif;margin-top:8px}
+.section-head p{color:var(--muted);max-width:650px;margin:12px auto}
+
+.intro{text-align:center;background:white;max-width:none}
+.intro-inner{max-width:850px;margin:auto}
+.quote{font:500 30px "Cormorant Garamond",serif;line-height:1.4}
+.signature{color:var(--rose);margin-top:20px}
+
+.albums{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.album{position:relative;height:390px;overflow:hidden;border-radius:18px;cursor:pointer;background:#ddd}
+.album img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.album:hover img{transform:scale(1.07)}
+.album-overlay{position:absolute;inset:auto 0 0;padding:55px 25px 25px;color:white;background:linear-gradient(transparent,rgba(0,0,0,.75))}
+.album-overlay h3{font:600 32px "Cormorant Garamond",serif}
+.album-overlay p{font-size:12px;opacity:.85}
+
+.timeline{max-width:850px;margin:auto;position:relative}
+.timeline:before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:#e4c5cc}
+.event{width:50%;padding:0 45px 50px;position:relative}
+.event:nth-child(odd){text-align:right}
+.event:nth-child(even){margin-left:50%}
+.event:after{content:"♥";position:absolute;top:0;width:28px;height:28px;border-radius:50%;background:var(--cream);color:var(--rose);font-size:12px;text-align:center;padding-top:6px}
+.event:nth-child(odd):after{right:-14px}.event:nth-child(even):after{left:-14px}
+.event small{color:var(--rose);letter-spacing:2px;text-transform:uppercase}
+.event h3{font:600 30px "Cormorant Garamond",serif;margin:5px 0}
+.event p{color:var(--muted);font-size:13px}
+
+.letter{background:#fff;border-radius:25px;padding:55px max(25px,7%);box-shadow:0 15px 50px rgba(70,30,40,.07);text-align:center}
+.letter h2{font:600 48px "Cormorant Garamond",serif}
+.letter p{max-width:700px;margin:22px auto;color:#66555a;line-height:2;font-family:"Cormorant Garamond",serif;font-size:21px}
+.footer{text-align:center;background:#24161b;color:#fff;padding:65px 20px}
+.footer h2{font:600 48px "Cormorant Garamond",serif}
+.footer p{opacity:.65;font-size:12px;margin-top:10px}
+
+/* Lightbox */
+#lightbox{position:fixed;inset:0;background:rgba(15,8,11,.94);z-index:10000;display:none;align-items:center;justify-content:center;padding:20px}
+#lightbox img{max-width:94%;max-height:88vh;object-fit:contain;border-radius:10px}
+.close{position:absolute;right:25px;top:18px;color:white;font-size:38px;cursor:pointer}
+.prev,.next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:0;color:white;border-radius:50%;width:48px;height:48px;cursor:pointer}
+.prev{left:20px}.next{right:20px}
+.heart-float{position:fixed;bottom:-30px;color:#d4778c;animation:float 6s linear forwards;z-index:2;pointer-events:none}
+
+@keyframes pulse{50%{transform:scale(1.12)}}
+@keyframes float{to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+@media(max-width:800px){
+  nav{padding:15px 20px}nav .links{display:none}
+  .hero{background-attachment:scroll}
+  .section{padding:70px 20px}
+  .albums{grid-template-columns:repeat(2,1fr)}
+  .album{height:360px}
+  .timeline:before{left:10px}
+  .event,.event:nth-child(even){width:100%;margin-left:0;padding:0 0 45px 38px;text-align:left}
+  .event:nth-child(odd):after,.event:nth-child(even):after{left:-4px;right:auto}
+  .quote{font-size:25px}
+}
+@media(max-width:600px){.albums{grid-template-columns:1fr}}
+@media(max-width:480px){
+  .lock-card{padding:35px 20px}.lock-card h1{font-size:36px}
+  .password-box button{padding:0 14px}.hero h1{font-size:66px}
+  .hero p{font-size:20px}
+}
+</style>
+</head>
+<body>
+
+<div id="lockScreen">
+  <div class="lock-card">
+    <div class="heart">♥</div>
+    <h1>Our Little Secret</h1>
+    <p>This place holds a year of us. Enter the secret code to open our memories.</p>
+    <div class="password-box">
+      <input id="password" type="password" inputmode="numeric" maxlength="4" placeholder="••••" aria-label="Password">
+      <button onclick="unlock()">Open ♥</button>
+    </div>
+    <div class="error" id="error"></div>
+  </div>
+</div>
+
+<div id="site">
+<nav>
+  <div class="logo">Us, Always ♥</div>
+  <div class="links">
+    <a href="#memories">Memories</a>
+    <a href="#journey">Our Journey</a>
+    <a href="#letter">Letter</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">365 days • countless memories • one love</div>
+    <h1>One Year<br>of Us</h1>
+    <p>Happy 1st Anniversary, my love. ♥</p>
+    <div class="scroll">SCROLL TO OUR MEMORIES ↓</div>
+  </div>
+</header>
+
+<section class="section intro">
+  <div class="intro-inner">
+    <div class="quote">“Some people search their whole lives for what I found in you.”</div>
+    <div class="signature">— To my favorite person</div>
+  </div>
+</section>
+
+<section class="section" id="memories">
+  <div class="section-head">
+    <span>Our private gallery</span>
+    <h2>Little Pieces of Us</h2>
+    <p>Tap an album to open 25 memories. There are 100 photos in total, arranged across four chapters of our story.</p>
+  </div>
+
+  <div class="albums">
+    <div class="album" onclick="openAlbum(0)">
+      <img src="https://picsum.photos/seed/memory001/1000/1400" alt="Memory album">
+      <div class="album-overlay"><h3>Our Beginning</h3><p>25 memories from where our story began.</p></div>
+    </div>
+    <div class="album" onclick="openAlbum(1)">
+      <img src="https://picsum.photos/seed/memory026/1000/1400" alt="Memory album">
+      <div class="album-overlay"><h3>Adventures</h3><p>25 little adventures and beautiful places.</p></div>
+    </div>
+    <div class="album" onclick="openAlbum(2)">
+      <img src="https://picsum.photos/seed/memory051/1000/1400" alt="Memory album">
+      <div class="album-overlay"><h3>Just Us</h3><p>25 moments that belong only to us.</p></div>
+    </div>
+    <div class="album" onclick="openAlbum(3)">
+      <img src="https://picsum.photos/seed/memory076/1000/1400" alt="Memory album">
+      <div class="album-overlay"><h3>Forever Moments</h3><p>25 memories I want to keep forever.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="journey">
+  <div class="section-head">
+    <span>Our story</span><h2>A Year in Moments</h2>
+  </div>
+  <div class="timeline">
+    <div class="event"><small>Chapter 01</small><h3>When We Met</h3><p>One ordinary moment that quietly became the beginning of something extraordinary.</p></div>
+    <div class="event"><small>Chapter 02</small><h3>Our First Memory</h3><p>The first of so many little memories that I wish I could replay forever.</p></div>
+    <div class="event"><small>Chapter 03</small><h3>Growing Together</h3><p>Through good days, difficult days, laughter and silence—we kept choosing each other.</p></div>
+    <div class="event"><small>Chapter 04</small><h3>One Whole Year</h3><p>365 days later, I still look at you and feel lucky that our paths crossed.</p></div>
+  </div>
+</section>
+
+<section class="section" id="letter">
+  <div class="letter">
+    <h2>A Letter For You</h2>
+    <p>
+      My love, thank you for making this first year so beautiful. Thank you for every smile,
+      every conversation, every silly moment, every hug, and every memory we created together.
+      I don't know what the future will look like, but I know I want more little moments with you.
+      More laughter. More adventures. More ordinary days that become extraordinary simply because
+      you're beside me. Happy first anniversary. Here's to our story—and to all the chapters still waiting for us.
+    </p>
+    <div class="signature">With all my heart, ♥</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <h2>Forever starts with us.</h2>
+  <p>Made with love • Our First Anniversary</p>
+</footer>
+</div>
+
+<div id="lightbox">
+  <span class="close" onclick="closeLightbox()">×</span>
+  <button class="prev" onclick="changePhoto(-1)">‹</button>
+  <img id="lightboxImg" src="" alt="Memory">
+  <button class="next" onclick="changePhoto(1)">›</button>
+</div>
+
+<script>
+const SECRET="7780";
+const albums=[
+[
+"https://picsum.photos/seed/memory001/1600/1100",
+"https://picsum.photos/seed/memory002/1600/1100",
+"https://picsum.photos/seed/memory003/1600/1100",
+"https://picsum.photos/seed/memory004/1600/1100",
+"https://picsum.photos/seed/memory005/1600/1100",
+"https://picsum.photos/seed/memory006/1600/1100",
+"https://picsum.photos/seed/memory007/1600/1100",
+"https://picsum.photos/seed/memory008/1600/1100",
+"https://picsum.photos/seed/memory009/1600/1100",
+"https://picsum.photos/seed/memory010/1600/1100",
+"https://picsum.photos/seed/memory011/1600/1100",
+"https://picsum.photos/seed/memory012/1600/1100",
+"https://picsum.photos/seed/memory013/1600/1100",
+"https://picsum.photos/seed/memory014/1600/1100",
+"https://picsum.photos/seed/memory015/1600/1100",
+"https://picsum.photos/seed/memory016/1600/1100",
+"https://picsum.photos/seed/memory017/1600/1100",
+"https://picsum.photos/seed/memory018/1600/1100",
+"https://picsum.photos/seed/memory019/1600/1100",
+"https://picsum.photos/seed/memory020/1600/1100",
+"https://picsum.photos/seed/memory021/1600/1100",
+"https://picsum.photos/seed/memory022/1600/1100",
+"https://picsum.photos/seed/memory023/1600/1100",
+"https://picsum.photos/seed/memory024/1600/1100",
+"https://picsum.photos/seed/memory025/1600/1100"
+],
+[
+"https://picsum.photos/seed/memory026/1600/1100",
+"https://picsum.photos/seed/memory027/1600/1100",
+"https://picsum.photos/seed/memory028/1600/1100",
+"https://picsum.photos/seed/memory029/1600/1100",
+"https://picsum.photos/seed/memory030/1600/1100",
+"https://picsum.photos/seed/memory031/1600/1100",
+"https://picsum.photos/seed/memory032/1600/1100",
+"https://picsum.photos/seed/memory033/1600/1100",
+"https://picsum.photos/seed/memory034/1600/1100",
+"https://picsum.photos/seed/memory035/1600/1100",
+"https://picsum.photos/seed/memory036/1600/1100",
+"https://picsum.photos/seed/memory037/1600/1100",
+"https://picsum.photos/seed/memory038/1600/1100",
+"https://picsum.photos/seed/memory039/1600/1100",
+"https://picsum.photos/seed/memory040/1600/1100",
+"https://picsum.photos/seed/memory041/1600/1100",
+"https://picsum.photos/seed/memory042/1600/1100",
+"https://picsum.photos/seed/memory043/1600/1100",
+"https://picsum.photos/seed/memory044/1600/1100",
+"https://picsum.photos/seed/memory045/1600/1100",
+"https://picsum.photos/seed/memory046/1600/1100",
+"https://picsum.photos/seed/memory047/1600/1100",
+"https://picsum.photos/seed/memory048/1600/1100",
+"https://picsum.photos/seed/memory049/1600/1100",
+"https://picsum.photos/seed/memory050/1600/1100"
+],
+[
+"https://picsum.photos/seed/memory051/1600/1100",
+"https://picsum.photos/seed/memory052/1600/1100",
+"https://picsum.photos/seed/memory053/1600/1100",
+"https://picsum.photos/seed/memory054/1600/1100",
+"https://picsum.photos/seed/memory055/1600/1100",
+"https://picsum.photos/seed/memory056/1600/1100",
+"https://picsum.photos/seed/memory057/1600/1100",
+"https://picsum.photos/seed/memory058/1600/1100",
+"https://picsum.photos/seed/memory059/1600/1100",
+"https://picsum.photos/seed/memory060/1600/1100",
+"https://picsum.photos/seed/memory061/1600/1100",
+"https://picsum.photos/seed/memory062/1600/1100",
+"https://picsum.photos/seed/memory063/1600/1100",
+"https://picsum.photos/seed/memory064/1600/1100",
+"https://picsum.photos/seed/memory065/1600/1100",
+"https://picsum.photos/seed/memory066/1600/1100",
+"https://picsum.photos/seed/memory067/1600/1100",
+"https://picsum.photos/seed/memory068/1600/1100",
+"https://picsum.photos/seed/memory069/1600/1100",
+"https://picsum.photos/seed/memory070/1600/1100",
+"https://picsum.photos/seed/memory071/1600/1100",
+"https://picsum.photos/seed/memory072/1600/1100",
+"https://picsum.photos/seed/memory073/1600/1100",
+"https://picsum.photos/seed/memory074/1600/1100",
+"https://picsum.photos/seed/memory075/1600/1100"
+],
+[
+"https://picsum.photos/seed/memory076/1600/1100",
+"https://picsum.photos/seed/memory077/1600/1100",
+"https://picsum.photos/seed/memory078/1600/1100",
+"https://picsum.photos/seed/memory079/1600/1100",
+"https://picsum.photos/seed/memory080/1600/1100",
+"https://picsum.photos/seed/memory081/1600/1100",
+"https://picsum.photos/seed/memory082/1600/1100",
+"https://picsum.photos/seed/memory083/1600/1100",
+"https://picsum.photos/seed/memory084/1600/1100",
+"https://picsum.photos/seed/memory085/1600/1100",
+"https://picsum.photos/seed/memory086/1600/1100",
+"https://picsum.photos/seed/memory087/1600/1100",
+"https://picsum.photos/seed/memory088/1600/1100",
+"https://picsum.photos/seed/memory089/1600/1100",
+"https://picsum.photos/seed/memory090/1600/1100",
+"https://picsum.photos/seed/memory091/1600/1100",
+"https://picsum.photos/seed/memory092/1600/1100",
+"https://picsum.photos/seed/memory093/1600/1100",
+"https://picsum.photos/seed/memory094/1600/1100",
+"https://picsum.photos/seed/memory095/1600/1100",
+"https://picsum.photos/seed/memory096/1600/1100",
+"https://picsum.photos/seed/memory097/1600/1100",
+"https://picsum.photos/seed/memory098/1600/1100",
+"https://picsum.photos/seed/memory099/1600/1100",
+"https://picsum.photos/seed/memory100/1600/1100"
+]
+];
+let current=[],index=0;
+
+function unlock(){
+ const value=document.getElementById("password").value;
+ if(value===SECRET){
+   document.getElementById("lockScreen").classList.add("hidden");
+   document.getElementById("site").style.display="block";
+   window.scrollTo(0,0);
+   createHearts();
+ }else{
+   document.getElementById("error").textContent="That code isn't right. Try again, my love. ♥";
+   document.getElementById("password").value="";
+ }
+}
+document.getElementById("password").addEventListener("keydown",e=>{if(e.key==="Enter")unlock()});
+
+function openAlbum(n){
+ current=albums[n];index=0;
+ document.getElementById("lightboxImg").src=current[index];
+ document.getElementById("lightbox").style.display="flex";
+}
+function closeLightbox(){document.getElementById("lightbox").style.display="none"}
+function changePhoto(step){
+ index=(index+step+current.length)%current.length;
+ document.getElementById("lightboxImg").src=current[index];
+}
+document.getElementById("lightbox").addEventListener("click",e=>{
+ if(e.target.id==="lightbox")closeLightbox();
+});
+document.addEventListener("keydown",e=>{
+ if(e.key==="Escape")closeLightbox();
+ if(e.key==="ArrowRight")changePhoto(1);
+ if(e.key==="ArrowLeft")changePhoto(-1);
+});
+function createHearts(){
+ setInterval(()=>{
+  const h=document.createElement("div");h.className="heart-float";h.textContent="♥";
+  h.style.left=Math.random()*100+"vw";h.style.fontSize=(12+Math.random()*18)+"px";
+  h.style.animationDuration=(5+Math.random()*4)+"s";
+  document.body.appendChild(h);setTimeout(()=>h.remove(),9000);
+ },1500);
+}
+</script>
+</body>
+</html>

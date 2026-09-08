@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>100 Reasons</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .reason-box {
+      max-width: 500px;
+      margin: 40px auto;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 50px 30px;
+      border-radius: 20px;
+      text-align: center;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .reason-num { color: var(--primary-color); font-family: var(--font-heading); font-size: 2.2rem; }
+    .reason-text { font-size: 1.2rem; margin-top: 15px; min-height: 60px; }
+  </style>
+</head>
+<body>
+  <div id="password-overlay"><div class="pass-card"><h2>Welcome My Love 💕</h2><input type="password" id="pass-input"><button onclick="checkPassword()">Unlock</button><p id="pass-error" class="error-msg">Incorrect password!</p></div></div>
+
+  <header>
+    <a href="index.html" class="logo">Forever Yours ✨</a>
+    <nav>
+      <a href="index.html">Memories</a>
+      <a href="letter.html">Letter</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="reasons.html" class="active">100 Reasons</a>
+      <a href="miss-me.html">If You Miss Me</a>
+      <a href="surprise.html">Surprise</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1 class="page-title">💗 100 Reasons I Love You</h1>
+    <p class="page-subtitle">Just a few of the infinite reasons why you're my favorite human.</p>
+
+    <div class="reason-box">
+      <div id="r-num" class="reason-num">Reason #1</div>
+      <div id="r-text" class="reason-text">The way your eyes light up when you smile.</div>
+    </div>
+
+    <div style="text-align: center;">
+      <button class="btn" onclick="nextReason()">Give Me Another Reason 💕</button>
+      <p id="final-note" style="margin-top: 20px; color: var(--primary-color); display: none; font-family: var(--font-heading); font-size: 1.8rem;">And honestly, 100 isn't even enough... ❤️</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const reasons = [
+      "The way your eyes light up when you smile.",
+      "How you always make me feel safe and loved.",
+      "Your comforting laugh that fixes my worst days.",
+      "The way you care so deeply for the people around you.",
+      "How cute you look when you get super excited.",
+      "Your warm hugs that feel like coming home.",
+      "The endless support you show for my dreams."
+    ];
+    let currentIndex = 0;
+
+    function nextReason() {
+      currentIndex = (currentIndex + 1) % reasons.length;
+      document.getElementById("r-num").innerText = `Reason #${currentIndex + 1}`;
+      document.getElementById("r-text").innerText = reasons[currentIndex];
+      
+      if(currentIndex === reasons.length - 1) {
+        document.getElementById("final-note").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Letter to You</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .letter-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--card-border);
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: #f7e6eb;
+    }
+    .letter-text {
+      min-height: 200px;
+      white-space: pre-line;
+      margin-bottom: 30px;
+    }
+    .signature {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      text-align: right;
+      display: none;
+    }
+    .center-btn { text-align: center; margin-bottom: 25px; }
+  </style>
+</head>
+<body>
+  <div id="password-overlay"><div class="pass-card"><h2>Welcome My Love 💕</h2><input type="password" id="pass-input"><button onclick="checkPassword()">Unlock</button><p id="pass-error" class="error-msg">Incorrect password!</p></div></div>
+
+  <header>
+    <a href="index.html" class="logo">Forever Yours ✨</a>
+    <nav>
+      <a href="index.html">Memories</a>
+      <a href="letter.html" class="active">Letter</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="reasons.html">100 Reasons</a>
+      <a href="miss-me.html">If You Miss Me</a>
+      <a href="surprise.html">Surprise</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1 class="page-title">💌 A Letter to You</h1>
+    <p class="page-subtitle">Straight from the deepest corner of my heart.</p>
+
+    <div class="center-btn">
+      <button class="btn" onclick="typeLetter()">Read My Heart 💖</button>
+    </div>
+
+    <div class="letter-box">
+      <div id="typed-text" class="letter-text">Click the button above to reveal my letter...</div>
+      <div id="sig" class="signature">Forever & Always,<br>Your Love ❤️</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const fullLetter = `My Dearest,\n\nFrom the moment you entered my life, everything changed for the better. You brought light into my darkest days and added color to my everyday world.\n\nEvery smile we share, every conversation, and every quiet moment together is a treasure I hold close to my heart. Thank you for loving me, for believing in us, and for making every single day feel like a beautiful fairytale.\n\nHere's to us, our journey, and a lifetime of more memories together.`;
+
+    function typeLetter() {
+      let i = 0;
+      const speed = 40;
+      const target = document.getElementById("typed-text");
+      target.innerHTML = "";
+      
+      function type() {
+        if (i < fullLetter.length) {
+          target.innerHTML += fullLetter.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        } else {
+          document.getElementById("sig").style.display = "block";
+        }
+      }
+      type();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Last Surprise</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <style>
+    .envelope-sec { text-align: center; margin: 40px 0; }
+    .envelope { font-size: 5rem; cursor: pointer; display: inline-block; transition: transform 0.3s; }
+    .envelope:hover { transform: scale(1.1) rotate(-5deg); }
+    .surprise-box { display: none; background: var(--card-bg); border: 1px solid var(--card-border); padding: 40px; border-radius: 20px; backdrop-filter: blur(10px); text-align: center; }
+    .future-list { text-align: left; max-width: 500px; margin: 20px auto; line-height: 2; }
+  </style>
+</head>
+<body>
+  <div id="password-overlay"><div class="pass-card"><h2>Welcome My Love 💕</h2><input type="password" id="pass-input"><button onclick="checkPassword()">Unlock</button><p id="pass-error" class="error-msg">Incorrect password!</p></div></div>
+
+  <header>
+    <a href="index.html" class="logo">Forever Yours ✨</a>
+    <nav>
+      <a href="index.html">Memories</a>
+      <a href="letter.html">Letter</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="reasons.html">100 Reasons</a>
+      <a href="miss-me.html">If You Miss Me</a>
+      <a href="surprise.html" class="active">Surprise</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1 class="page-title">🎁 One Last Surprise</h1>
+    <p class="page-subtitle">Click the envelope to unwrap your special message.</p>
+
+    <div class="envelope-sec">
+      <div class="envelope" onclick="openSurprise()">💌</div>
+    </div>
+
+    <div id="surprise-card" class="surprise-box">
+      <h2 style="font-family: var(--font-heading); color: var(--primary-color); font-size: 2.5rem;">Happy Anniversary! 🎉</h2>
+      <p style="margin-top: 10px;">You are my today and all of my tomorrows.</p>
+
+      <div style="margin-top: 30px;">
+        <h3 style="color: var(--primary-color);">✨ Our Next Chapter Bucket List</h3>
+        <ul class="future-list">
+          <li>✈️ Take that long beach trip we keep planning</li>
+          <li>🍕 Master making homemade pizza together</li>
+          <li>🌌 Watch the stars from a cozy mountain cabin</li>
+        </ul>
+      </div>
+
+      <h2 style="font-family: var(--font-heading); font-size: 2.2rem; color: #fff; margin-top: 30px;">
+        Will you make another year with me? 💕
+      </h2>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function openSurprise() {
+      document.querySelector('.envelope').style.display = 'none';
+      document.getElementById('surprise-card').style.display = 'block';
+      
+      // Fire Confetti Animation
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    }
+  </script>
+</body>
+</html>
