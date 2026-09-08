@@ -63,26 +63,30 @@
   </div>
 
   <script src="script.js"></script>
-  <script>
-    const fullLetter = `My Dearest,\n\nFrom the moment you entered my life, everything changed for the better. You brought light into my darkest days and added color to my everyday world.\n\nEvery smile we share, every conversation, and every quiet moment together is a treasure I hold close to my heart. Thank you for loving me, for believing in us, and for making every single day feel like a beautiful fairytale.\n\nHere's to us, our journey, and a lifetime of more memories together.`;
+<script>
+  const fullLetter = `My Dearest,\n\nFrom the moment you entered my life, everything changed for the better. You brought light into my darkest days and added color to my everyday world.\n\nEvery smile we share, every conversation, and every quiet moment together is a treasure I hold close to my heart. Thank you for loving me, for believing in us, and for making every single day feel like a beautiful fairytale.\n\nHere's to us, our journey, and a lifetime of more memories together.`;
 
-    function typeLetter() {
-      let i = 0;
-      const speed = 40;
-      const target = document.getElementById("typed-text");
-      target.innerHTML = "";
-      
-      function type() {
-        if (i < fullLetter.length) {
-          target.innerHTML += fullLetter.charAt(i);
-          i++;
-          setTimeout(type, speed);
-        } else {
-          document.getElementById("sig").style.display = "block";
-        }
+  function typeLetter() {
+    let i = 0;
+    const speed = 40;
+    const target = document.getElementById("typed-text");
+
+    target.innerHTML = "";
+    target.style.color = "#888888";
+
+    function type() {
+      if (i < fullLetter.length) {
+        target.innerHTML += fullLetter.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      } else {
+        document.getElementById("sig").style.display = "block";
       }
-      type();
     }
-  </script>
+
+    type();
+  }
+</script>
+
 </body>
 </html>
