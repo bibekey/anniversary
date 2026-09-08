@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our First Anniversary ❤️</title>
-<meta name="description" content="A private collection of our first year of memories.">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
@@ -39,145 +32,6 @@ button{
   font:inherit;
 }
 
-.hidden{
-  display:none!important;
-}
-
-/* =========================
-   PASSWORD SCREEN
-========================= */
-
-#lockScreen{
-  position:fixed;
-  inset:0;
-  z-index:9999;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  background:
-    radial-gradient(circle at 20% 20%,#f8d9df,transparent 35%),
-    radial-gradient(circle at 80% 80%,#eac1ca,transparent 35%),
-    #fff8f5;
-}
-
-.lock-card{
-  width:min(430px,100%);
-  padding:45px 30px;
-  text-align:center;
-  background:rgba(255,255,255,.86);
-  border:1px solid rgba(184,92,112,.2);
-  border-radius:28px;
-  box-shadow:0 25px 80px rgba(83,43,52,.16);
-  backdrop-filter:blur(14px);
-}
-
-.heart{
-  font-size:48px;
-  animation:pulse 1.8s infinite;
-}
-
-.lock-card h1{
-  font-family:"Cormorant Garamond",serif;
-  font-size:42px;
-  margin:12px 0 5px;
-}
-
-.lock-card p{
-  color:var(--muted);
-  font-size:14px;
-  margin-bottom:25px;
-}
-
-.password-box{
-  display:flex;
-  gap:9px;
-}
-
-.password-box input{
-  flex:1;
-  min-width:0;
-  border:1px solid #e4c8ce;
-  border-radius:12px;
-  padding:14px;
-  text-align:center;
-  letter-spacing:7px;
-  font-size:18px;
-  outline:none;
-}
-
-.password-box button{
-  border:0;
-  background:var(--rose);
-  color:#fff;
-  border-radius:12px;
-  padding:0 20px;
-  cursor:pointer;
-}
-
-.error{
-  color:#b33d59;
-  font-size:12px;
-  margin-top:12px;
-  min-height:16px;
-}
-
-/* =========================
-   MAIN
-========================= */
-
-#site{
-  display:none;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:white;
-  position:relative;
-  background:
-    linear-gradient(rgba(28,13,19,.45),rgba(28,13,19,.65)),
-    url("https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1800&q=85")
-    center/cover fixed;
-}
-
-.hero-content{
-  padding:40px 20px;
-  max-width:850px;
-}
-
-.eyebrow{
-  text-transform:uppercase;
-  letter-spacing:5px;
-  font-size:12px;
-}
-
-.hero h1{
-  font-family:"Cormorant Garamond",serif;
-  font-size:clamp(62px,11vw,120px);
-  line-height:.85;
-  margin:20px 0;
-}
-
-.hero p{
-  font-family:"Cormorant Garamond",serif;
-  font-size:25px;
-}
-
-.scroll{
-  margin-top:55px;
-  font-size:12px;
-  letter-spacing:3px;
-  opacity:.8;
-}
-
 /* =========================
    SECTIONS
 ========================= */
@@ -209,31 +63,6 @@ button{
   color:var(--muted);
   max-width:650px;
   margin:12px auto;
-}
-
-/* =========================
-   INTRO
-========================= */
-
-.intro{
-  text-align:center;
-  background:white;
-  max-width:none;
-}
-
-.intro-inner{
-  max-width:850px;
-  margin:auto;
-}
-
-.quote{
-  font:500 30px "Cormorant Garamond",serif;
-  line-height:1.4;
-}
-
-.signature{
-  color:var(--rose);
-  margin-top:20px;
 }
 
 /* =========================
@@ -359,31 +188,6 @@ button{
 }
 
 /* =========================
-   LETTER
-========================= */
-
-.letter{
-  background:#fff;
-  border-radius:25px;
-  padding:55px max(25px,7%);
-  box-shadow:0 15px 50px rgba(70,30,40,.07);
-  text-align:center;
-}
-
-.letter h2{
-  font:600 48px "Cormorant Garamond",serif;
-}
-
-.letter p{
-  max-width:700px;
-  margin:22px auto;
-  color:#66555a;
-  line-height:2;
-  font-family:"Cormorant Garamond",serif;
-  font-size:21px;
-}
-
-/* =========================
    LIGHTBOX
 ========================= */
 
@@ -453,12 +257,6 @@ button{
    ANIMATIONS
 ========================= */
 
-@keyframes pulse{
-  50%{
-    transform:scale(1.12);
-  }
-}
-
 @keyframes float{
   to{
     transform:translateY(-110vh) rotate(360deg);
@@ -471,10 +269,6 @@ button{
 ========================= */
 
 @media(max-width:800px){
-
-  .hero{
-    background-attachment:scroll;
-  }
 
   .section{
     padding:70px 20px;
@@ -505,10 +299,6 @@ button{
     left:-4px;
     right:auto;
   }
-
-  .quote{
-    font-size:25px;
-  }
 }
 
 @media(max-width:600px){
@@ -517,127 +307,17 @@ button{
     grid-template-columns:1fr;
   }
 }
-
-@media(max-width:480px){
-
-  .lock-card{
-    padding:35px 20px;
-  }
-
-  .lock-card h1{
-    font-size:36px;
-  }
-
-  .password-box button{
-    padding:0 14px;
-  }
-
-  .hero h1{
-    font-size:66px;
-  }
-
-  .hero p{
-    font-size:20px;
-  }
-}
 </style>
+
 </head>
 
 <body>
-
-<!-- =========================
-     PASSWORD SCREEN
-========================= -->
-
-<div id="lockScreen">
-
-  <div class="lock-card">
-
-    <div class="heart">♥</div>
-
-    <h1>Our Little Secret</h1>
-
-    <p>
-      This place holds a year of us.
-      Enter the secret code to open our memories.
-    </p>
-
-    <div class="password-box">
-
-      <input
-        id="password"
-        type="password"
-        inputmode="numeric"
-        maxlength="4"
-        placeholder="••••"
-        aria-label="Password"
-      >
-
-      <button onclick="unlock()">
-        Open ♥
-      </button>
-
-    </div>
-
-    <div class="error" id="error"></div>
-
-  </div>
-
-</div>
-
 
 <!-- =========================
      MAIN WEBSITE
 ========================= -->
 
 <div id="site">
-
-  <!-- HERO -->
-
-  <header class="hero">
-
-    <div class="hero-content">
-
-      <div class="eyebrow">
-        365 days • countless memories • one love
-      </div>
-
-      <h1>
-        One Year<br>
-        of Us
-      </h1>
-
-      <p>
-        Happy 1st Anniversary, my love. ♥
-      </p>
-
-      <div class="scroll">
-        SCROLL TO OUR MEMORIES ↓
-      </div>
-
-    </div>
-
-  </header>
-
-
-  <!-- INTRO -->
-
-  <section class="section intro">
-
-    <div class="intro-inner">
-
-      <div class="quote">
-        “Some people search their whole lives for what I found in you.”
-      </div>
-
-      <div class="signature">
-        — To my favorite person
-      </div>
-
-    </div>
-
-  </section>
-
 
   <!-- MEMORIES -->
 
@@ -661,94 +341,62 @@ button{
 
     </div>
 
-
     <div class="albums">
 
       <div class="album" onclick="openAlbum(0)">
-
         <img
           src="https://picsum.photos/seed/memory001/1000/1400"
           alt="Memory album"
         >
 
         <div class="album-overlay">
-
-          <h3>
-            Our Beginning
-          </h3>
-
+          <h3>Our Beginning</h3>
           <p>
             25 memories from where our story began.
           </p>
-
         </div>
-
       </div>
 
-
       <div class="album" onclick="openAlbum(1)">
-
         <img
           src="https://picsum.photos/seed/memory026/1000/1400"
           alt="Memory album"
         >
 
         <div class="album-overlay">
-
-          <h3>
-            Adventures
-          </h3>
-
+          <h3>Adventures</h3>
           <p>
             25 little adventures and beautiful places.
           </p>
-
         </div>
-
       </div>
 
-
       <div class="album" onclick="openAlbum(2)">
-
         <img
           src="https://picsum.photos/seed/memory051/1000/1400"
           alt="Memory album"
         >
 
         <div class="album-overlay">
-
-          <h3>
-            Just Us
-          </h3>
-
+          <h3>Just Us</h3>
           <p>
             25 moments that belong only to us.
           </p>
-
         </div>
-
       </div>
 
-
       <div class="album" onclick="openAlbum(3)">
-
         <img
           src="https://picsum.photos/seed/memory076/1000/1400"
           alt="Memory album"
         >
 
         <div class="album-overlay">
-
-          <h3>
-            Forever Moments
-          </h3>
-
+          <h3>Forever Moments</h3>
           <p>
             25 memories I want to keep forever.
           </p>
-
         </div>
-
       </div>
 
     </div>
@@ -772,14 +420,10 @@ button{
 
     </div>
 
-
     <div class="timeline">
 
       <div class="event">
-
-        <small>
-          Chapter 01
-        </small>
+        <small>Chapter 01</small>
 
         <h3>
           When We Met
@@ -789,15 +433,10 @@ button{
           One ordinary moment that quietly became
           the beginning of something extraordinary.
         </p>
-
       </div>
 
-
       <div class="event">
-
-        <small>
-          Chapter 02
-        </small>
+        <small>Chapter 02</small>
 
         <h3>
           Our First Memory
@@ -807,15 +446,10 @@ button{
           The first of so many little memories
           that I wish I could replay forever.
         </p>
-
       </div>
 
-
       <div class="event">
-
-        <small>
-          Chapter 03
-        </small>
+        <small>Chapter 03</small>
 
         <h3>
           Growing Together
@@ -825,15 +459,10 @@ button{
           Through good days, difficult days,
           laughter and silence—we kept choosing each other.
         </p>
-
       </div>
 
-
       <div class="event">
-
-        <small>
-          Chapter 04
-        </small>
+        <small>Chapter 04</small>
 
         <h3>
           One Whole Year
@@ -843,37 +472,6 @@ button{
           365 days later, I still look at you
           and feel lucky that our paths crossed.
         </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- LETTER -->
-
-  <section class="section" id="letter">
-
-    <div class="letter">
-
-      <h2>
-        A Letter For You
-      </h2>
-
-      <p>
-        My love, thank you for making this first year so beautiful.
-        Thank you for every smile, every conversation, every silly moment,
-        every hug, and every memory we created together.
-        I don't know what the future will look like, but I know I want
-        more little moments with you. More laughter. More adventures.
-        More ordinary days that become extraordinary simply because
-        you're beside me. Happy first anniversary.
-        Here's to our story—and to all the chapters still waiting for us.
-      </p>
-
-      <div class="signature">
-        With all my heart, ♥
       </div>
 
     </div>
@@ -921,178 +519,128 @@ button{
 
 <script>
 
-const SECRET = "7780";
+/* =========================
+   ALBUM PHOTOS
+========================= */
 
 const albums = [
 
-[
-"https://picsum.photos/seed/memory001/1600/1100",
-"https://picsum.photos/seed/memory002/1600/1100",
-"https://picsum.photos/seed/memory003/1600/1100",
-"https://picsum.photos/seed/memory004/1600/1100",
-"https://picsum.photos/seed/memory005/1600/1100",
-"https://picsum.photos/seed/memory006/1600/1100",
-"https://picsum.photos/seed/memory007/1600/1100",
-"https://picsum.photos/seed/memory008/1600/1100",
-"https://picsum.photos/seed/memory009/1600/1100",
-"https://picsum.photos/seed/memory010/1600/1100",
-"https://picsum.photos/seed/memory011/1600/1100",
-"https://picsum.photos/seed/memory012/1600/1100",
-"https://picsum.photos/seed/memory013/1600/1100",
-"https://picsum.photos/seed/memory014/1600/1100",
-"https://picsum.photos/seed/memory015/1600/1100",
-"https://picsum.photos/seed/memory016/1600/1100",
-"https://picsum.photos/seed/memory017/1600/1100",
-"https://picsum.photos/seed/memory018/1600/1100",
-"https://picsum.photos/seed/memory019/1600/1100",
-"https://picsum.photos/seed/memory020/1600/1100",
-"https://picsum.photos/seed/memory021/1600/1100",
-"https://picsum.photos/seed/memory022/1600/1100",
-"https://picsum.photos/seed/memory023/1600/1100",
-"https://picsum.photos/seed/memory024/1600/1100",
-"https://picsum.photos/seed/memory025/1600/1100"
-],
+  [
+    "https://picsum.photos/seed/memory001/1600/1100",
+    "https://picsum.photos/seed/memory002/1600/1100",
+    "https://picsum.photos/seed/memory003/1600/1100",
+    "https://picsum.photos/seed/memory004/1600/1100",
+    "https://picsum.photos/seed/memory005/1600/1100",
+    "https://picsum.photos/seed/memory006/1600/1100",
+    "https://picsum.photos/seed/memory007/1600/1100",
+    "https://picsum.photos/seed/memory008/1600/1100",
+    "https://picsum.photos/seed/memory009/1600/1100",
+    "https://picsum.photos/seed/memory010/1600/1100",
+    "https://picsum.photos/seed/memory011/1600/1100",
+    "https://picsum.photos/seed/memory012/1600/1100",
+    "https://picsum.photos/seed/memory013/1600/1100",
+    "https://picsum.photos/seed/memory014/1600/1100",
+    "https://picsum.photos/seed/memory015/1600/1100",
+    "https://picsum.photos/seed/memory016/1600/1100",
+    "https://picsum.photos/seed/memory017/1600/1100",
+    "https://picsum.photos/seed/memory018/1600/1100",
+    "https://picsum.photos/seed/memory019/1600/1100",
+    "https://picsum.photos/seed/memory020/1600/1100",
+    "https://picsum.photos/seed/memory021/1600/1100",
+    "https://picsum.photos/seed/memory022/1600/1100",
+    "https://picsum.photos/seed/memory023/1600/1100",
+    "https://picsum.photos/seed/memory024/1600/1100",
+    "https://picsum.photos/seed/memory025/1600/1100"
+  ],
 
-[
-"https://picsum.photos/seed/memory026/1600/1100",
-"https://picsum.photos/seed/memory027/1600/1100",
-"https://picsum.photos/seed/memory028/1600/1100",
-"https://picsum.photos/seed/memory029/1600/1100",
-"https://picsum.photos/seed/memory030/1600/1100",
-"https://picsum.photos/seed/memory031/1600/1100",
-"https://picsum.photos/seed/memory032/1600/1100",
-"https://picsum.photos/seed/memory033/1600/1100",
-"https://picsum.photos/seed/memory034/1600/1100",
-"https://picsum.photos/seed/memory035/1600/1100",
-"https://picsum.photos/seed/memory036/1600/1100",
-"https://picsum.photos/seed/memory037/1600/1100",
-"https://picsum.photos/seed/memory038/1600/1100",
-"https://picsum.photos/seed/memory039/1600/1100",
-"https://picsum.photos/seed/memory040/1600/1100",
-"https://picsum.photos/seed/memory041/1600/1100",
-"https://picsum.photos/seed/memory042/1600/1100",
-"https://picsum.photos/seed/memory043/1600/1100",
-"https://picsum.photos/seed/memory044/1600/1100",
-"https://picsum.photos/seed/memory045/1600/1100",
-"https://picsum.photos/seed/memory046/1600/1100",
-"https://picsum.photos/seed/memory047/1600/1100",
-"https://picsum.photos/seed/memory048/1600/1100",
-"https://picsum.photos/seed/memory049/1600/1100",
-"https://picsum.photos/seed/memory050/1600/1100"
-],
+  [
+    "https://picsum.photos/seed/memory026/1600/1100",
+    "https://picsum.photos/seed/memory027/1600/1100",
+    "https://picsum.photos/seed/memory028/1600/1100",
+    "https://picsum.photos/seed/memory029/1600/1100",
+    "https://picsum.photos/seed/memory030/1600/1100",
+    "https://picsum.photos/seed/memory031/1600/1100",
+    "https://picsum.photos/seed/memory032/1600/1100",
+    "https://picsum.photos/seed/memory033/1600/1100",
+    "https://picsum.photos/seed/memory034/1600/1100",
+    "https://picsum.photos/seed/memory035/1600/1100",
+    "https://picsum.photos/seed/memory036/1600/1100",
+    "https://picsum.photos/seed/memory037/1600/1100",
+    "https://picsum.photos/seed/memory038/1600/1100",
+    "https://picsum.photos/seed/memory039/1600/1100",
+    "https://picsum.photos/seed/memory040/1600/1100",
+    "https://picsum.photos/seed/memory041/1600/1100",
+    "https://picsum.photos/seed/memory042/1600/1100",
+    "https://picsum.photos/seed/memory043/1600/1100",
+    "https://picsum.photos/seed/memory044/1600/1100",
+    "https://picsum.photos/seed/memory045/1600/1100",
+    "https://picsum.photos/seed/memory046/1600/1100",
+    "https://picsum.photos/seed/memory047/1600/1100",
+    "https://picsum.photos/seed/memory048/1600/1100",
+    "https://picsum.photos/seed/memory049/1600/1100",
+    "https://picsum.photos/seed/memory050/1600/1100"
+  ],
 
-[
-"https://picsum.photos/seed/memory051/1600/1100",
-"https://picsum.photos/seed/memory052/1600/1100",
-"https://picsum.photos/seed/memory053/1600/1100",
-"https://picsum.photos/seed/memory054/1600/1100",
-"https://picsum.photos/seed/memory055/1600/1100",
-"https://picsum.photos/seed/memory056/1600/1100",
-"https://picsum.photos/seed/memory057/1600/1100",
-"https://picsum.photos/seed/memory058/1600/1100",
-"https://picsum.photos/seed/memory059/1600/1100",
-"https://picsum.photos/seed/memory060/1600/1100",
-"https://picsum.photos/seed/memory061/1600/1100",
-"https://picsum.photos/seed/memory062/1600/1100",
-"https://picsum.photos/seed/memory063/1600/1100",
-"https://picsum.photos/seed/memory064/1600/1100",
-"https://picsum.photos/seed/memory065/1600/1100",
-"https://picsum.photos/seed/memory066/1600/1100",
-"https://picsum.photos/seed/memory067/1600/1100",
-"https://picsum.photos/seed/memory068/1600/1100",
-"https://picsum.photos/seed/memory069/1600/1100",
-"https://picsum.photos/seed/memory070/1600/1100",
-"https://picsum.photos/seed/memory071/1600/1100",
-"https://picsum.photos/seed/memory072/1600/1100",
-"https://picsum.photos/seed/memory073/1600/1100",
-"https://picsum.photos/seed/memory074/1600/1100",
-"https://picsum.photos/seed/memory075/1600/1100"
-],
+  [
+    "https://picsum.photos/seed/memory051/1600/1100",
+    "https://picsum.photos/seed/memory052/1600/1100",
+    "https://picsum.photos/seed/memory053/1600/1100",
+    "https://picsum.photos/seed/memory054/1600/1100",
+    "https://picsum.photos/seed/memory055/1600/1100",
+    "https://picsum.photos/seed/memory056/1600/1100",
+    "https://picsum.photos/seed/memory057/1600/1100",
+    "https://picsum.photos/seed/memory058/1600/1100",
+    "https://picsum.photos/seed/memory059/1600/1100",
+    "https://picsum.photos/seed/memory060/1600/1100",
+    "https://picsum.photos/seed/memory061/1600/1100",
+    "https://picsum.photos/seed/memory062/1600/1100",
+    "https://picsum.photos/seed/memory063/1600/1100",
+    "https://picsum.photos/seed/memory064/1600/1100",
+    "https://picsum.photos/seed/memory065/1600/1100",
+    "https://picsum.photos/seed/memory066/1600/1100",
+    "https://picsum.photos/seed/memory067/1600/1100",
+    "https://picsum.photos/seed/memory068/1600/1100",
+    "https://picsum.photos/seed/memory069/1600/1100",
+    "https://picsum.photos/seed/memory070/1600/1100",
+    "https://picsum.photos/seed/memory071/1600/1100",
+    "https://picsum.photos/seed/memory072/1600/1100",
+    "https://picsum.photos/seed/memory073/1600/1100",
+    "https://picsum.photos/seed/memory074/1600/1100",
+    "https://picsum.photos/seed/memory075/1600/1100"
+  ],
 
-[
-"https://picsum.photos/seed/memory076/1600/1100",
-"https://picsum.photos/seed/memory077/1600/1100",
-"https://picsum.photos/seed/memory078/1600/1100",
-"https://picsum.photos/seed/memory079/1600/1100",
-"https://picsum.photos/seed/memory080/1600/1100",
-"https://picsum.photos/seed/memory081/1600/1100",
-"https://picsum.photos/seed/memory082/1600/1100",
-"https://picsum.photos/seed/memory083/1600/1100",
-"https://picsum.photos/seed/memory084/1600/1100",
-"https://picsum.photos/seed/memory085/1600/1100",
-"https://picsum.photos/seed/memory086/1600/1100",
-"https://picsum.photos/seed/memory087/1600/1100",
-"https://picsum.photos/seed/memory088/1600/1100",
-"https://picsum.photos/seed/memory089/1600/1100",
-"https://picsum.photos/seed/memory090/1600/1100",
-"https://picsum.photos/seed/memory091/1600/1100",
-"https://picsum.photos/seed/memory092/1600/1100",
-"https://picsum.photos/seed/memory093/1600/1100",
-"https://picsum.photos/seed/memory094/1600/1100",
-"https://picsum.photos/seed/memory095/1600/1100",
-"https://picsum.photos/seed/memory096/1600/1100",
-"https://picsum.photos/seed/memory097/1600/1100",
-"https://picsum.photos/seed/memory098/1600/1100",
-"https://picsum.photos/seed/memory099/1600/1100",
-"https://picsum.photos/seed/memory100/1600/1100"
-]
+  [
+    "https://picsum.photos/seed/memory076/1600/1100",
+    "https://picsum.photos/seed/memory077/1600/1100",
+    "https://picsum.photos/seed/memory078/1600/1100",
+    "https://picsum.photos/seed/memory079/1600/1100",
+    "https://picsum.photos/seed/memory080/1600/1100",
+    "https://picsum.photos/seed/memory081/1600/1100",
+    "https://picsum.photos/seed/memory082/1600/1100",
+    "https://picsum.photos/seed/memory083/1600/1100",
+    "https://picsum.photos/seed/memory084/1600/1100",
+    "https://picsum.photos/seed/memory085/1600/1100",
+    "https://picsum.photos/seed/memory086/1600/1100",
+    "https://picsum.photos/seed/memory087/1600/1100",
+    "https://picsum.photos/seed/memory088/1600/1100",
+    "https://picsum.photos/seed/memory089/1600/1100",
+    "https://picsum.photos/seed/memory090/1600/1100",
+    "https://picsum.photos/seed/memory091/1600/1100",
+    "https://picsum.photos/seed/memory092/1600/1100",
+    "https://picsum.photos/seed/memory093/1600/1100",
+    "https://picsum.photos/seed/memory094/1600/1100",
+    "https://picsum.photos/seed/memory095/1600/1100",
+    "https://picsum.photos/seed/memory096/1600/1100",
+    "https://picsum.photos/seed/memory097/1600/1100",
+    "https://picsum.photos/seed/memory098/1600/1100",
+    "https://picsum.photos/seed/memory099/1600/1100",
+    "https://picsum.photos/seed/memory100/1600/1100"
+  ]
 
 ];
 
 let current = [];
 let index = 0;
-
-
-/* =========================
-   UNLOCK
-========================= */
-
-function unlock(){
-
-  const value =
-    document.getElementById("password").value;
-
-  if(value === SECRET){
-
-    document
-      .getElementById("lockScreen")
-      .classList.add("hidden");
-
-    document
-      .getElementById("site")
-      .style.display = "block";
-
-    window.scrollTo(0,0);
-
-    createHearts();
-
-  }else{
-
-    document
-      .getElementById("error")
-      .textContent =
-      "That code isn't right. Try again, my love. ♥";
-
-    document
-      .getElementById("password")
-      .value = "";
-
-  }
-
-}
-
-
-/* ENTER KEY */
-
-document
-  .getElementById("password")
-  .addEventListener("keydown",e=>{
-
-    if(e.key === "Enter"){
-      unlock();
-    }
-
-});
 
 
 /* =========================
@@ -1102,17 +650,13 @@ document
 function openAlbum(n){
 
   current = albums[n];
-
   index = 0;
 
-  document
-    .getElementById("lightboxImg")
-    .src = current[index];
+  document.getElementById("lightboxImg").src =
+    current[index];
 
-  document
-    .getElementById("lightbox")
-    .style.display = "flex";
-
+  document.getElementById("lightbox").style.display =
+    "flex";
 }
 
 
@@ -1122,10 +666,8 @@ function openAlbum(n){
 
 function closeLightbox(){
 
-  document
-    .getElementById("lightbox")
-    .style.display = "none";
-
+  document.getElementById("lightbox").style.display =
+    "none";
 }
 
 
@@ -1139,14 +681,14 @@ function changePhoto(step){
     (index + step + current.length)
     % current.length;
 
-  document
-    .getElementById("lightboxImg")
-    .src = current[index];
-
+  document.getElementById("lightboxImg").src =
+    current[index];
 }
 
 
-/* CLICK OUTSIDE */
+/* =========================
+   CLICK OUTSIDE
+========================= */
 
 document
   .getElementById("lightbox")
@@ -1159,7 +701,9 @@ document
 });
 
 
-/* KEYBOARD CONTROLS */
+/* =========================
+   KEYBOARD CONTROLS
+========================= */
 
 document.addEventListener("keydown",e=>{
 
@@ -1186,11 +730,9 @@ function createHearts(){
 
   setInterval(()=>{
 
-    const h =
-      document.createElement("div");
+    const h = document.createElement("div");
 
     h.className = "heart-float";
-
     h.textContent = "♥";
 
     h.style.left =
@@ -1213,7 +755,9 @@ function createHearts(){
 
 }
 
-</script>
 
-</body>
-</html>
+/* Start floating hearts automatically */
+
+createHearts();
+
+</script>
