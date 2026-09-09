@@ -875,77 +875,239 @@ button{
   opacity:.85;
 }
 
-/* =========================
-   TIMELINE
-========================= */
+    /* =====================================================
+       TIMELINE
+    ===================================================== */
 
-.timeline{
-  max-width:850px;
-  margin:auto;
-  position:relative;
-}
+    .timeline {
+      max-width: 850px;
+      margin: auto;
+      position: relative;
+    }
 
-.timeline:before{
-  content:"";
-  position:absolute;
-  left:50%;
-  top:0;
-  bottom:0;
-  width:1px;
-  background:#e4c5cc;
-}
+    .timeline:before {
+      content: "";
 
-.event{
-  width:50%;
-  padding:0 45px 50px;
-  position:relative;
-}
+      position: absolute;
 
-.event:nth-child(odd){
-  text-align:right;
-}
+      left: 50%;
+      top: 0;
+      bottom: 0;
 
-.event:nth-child(even){
-  margin-left:50%;
-}
+      width: 1px;
 
-.event:after{
-  content:"♥";
-  position:absolute;
-  top:0;
-  width:28px;
-  height:28px;
-  border-radius:50%;
-  background:var(--cream);
-  color:var(--rose);
-  font-size:12px;
-  text-align:center;
-  padding-top:6px;
-}
+      background: #e4c5cc;
+    }
 
-.event:nth-child(odd):after{
-  right:-14px;
-}
+    .event {
+      width: 50%;
+      padding: 0 45px 50px;
 
-.event:nth-child(even):after{
-  left:-14px;
-}
+      position: relative;
+    }
 
-.event small{
-  color:var(--rose);
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
+    .event:nth-child(odd) {
+      text-align: right;
+    }
 
-.event h3{
-  font:600 30px "Cormorant Garamond",serif;
-  margin:5px 0;
-}
+    .event:nth-child(even) {
+      margin-left: 50%;
+    }
 
-.event p{
-  color:var(--muted);
-  font-size:13px;
-}
+    .event:after {
+      content: "♥";
+
+      position: absolute;
+
+      top: 0;
+
+      width: 28px;
+      height: 28px;
+
+      border-radius: 50%;
+
+      background: var(--cream);
+      color: var(--rose);
+
+      font-size: 12px;
+
+      text-align: center;
+
+      padding-top: 6px;
+    }
+
+    .event:nth-child(odd):after {
+      right: -14px;
+    }
+
+    .event:nth-child(even):after {
+      left: -14px;
+    }
+
+    .event small {
+      color: var(--rose);
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+    }
+
+    .event h3 {
+      font: 600 30px "Cormorant Garamond",serif;
+
+      margin: 5px 0;
+    }
+
+    .event p {
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       CHAPTER 05
+    ===================================================== */
+
+    .chapter-five {
+      padding-bottom: 20px;
+    }
+
+    .chapter-five > p {
+      max-width: 600px;
+    }
+
+    .chapter-five > p strong {
+      color: var(--dark);
+    }
+
+    .chapter-choice {
+      display: flex;
+
+      gap: 12px;
+
+      margin-top: 22px;
+
+      flex-wrap: wrap;
+    }
+
+    .chapter-choice button {
+      border: none;
+
+      padding: 12px 20px;
+
+      border-radius: 50px;
+
+      cursor: pointer;
+
+      font-family: Poppins,sans-serif;
+
+      font-size: 12px;
+
+      transition: .3s ease;
+    }
+
+    .yes-btn {
+      background: var(--rose);
+      color: white;
+    }
+
+    .yes-btn:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 10px 25px rgba(184,92,112,.25);
+    }
+
+    .no-btn {
+      background: transparent;
+
+      color: var(--dark);
+
+      border: 1px solid #dfc8ce !important;
+    }
+
+    .no-btn:hover {
+      transform: translateY(-3px);
+
+      background: #fff;
+    }
+
+
+    /* CHAPTER RESULT */
+
+    .chapter-result {
+      display: none;
+
+      margin-top: 28px;
+
+      padding: 28px 25px;
+
+      border-radius: 20px;
+
+      animation: chapterAppear .7s ease;
+    }
+
+    .chapter-result.show {
+      display: block;
+    }
+
+    .yes-result {
+      background:
+        linear-gradient(
+          135deg,
+          #fff0f3,
+          #fff8f5
+        );
+
+      border: 1px solid #edc4cd;
+    }
+
+    .no-result {
+      background: #faf8f7;
+
+      border: 1px solid #e5dddd;
+    }
+
+    .result-heart {
+      font-size: 30px;
+
+      color: var(--rose);
+
+      margin-bottom: 8px;
+    }
+
+    .chapter-result h3 {
+      font: 600 30px "Cormorant Garamond",serif;
+
+      margin-bottom: 12px;
+
+      color: var(--dark);
+    }
+
+    .chapter-result p {
+      color: var(--muted);
+
+      font-size: 13px;
+
+      line-height: 1.8;
+    }
+
+    .chapter-result strong {
+      color: var(--dark);
+    }
+
+    .chapter-signature {
+      margin-top: 20px;
+
+      color: var(--rose);
+
+      font: 600 18px "Cormorant Garamond",serif;
+
+      letter-spacing: .5px;
+    }
 
 /* =========================
    LIGHTBOX
@@ -1234,11 +1396,166 @@ button{
         </p>
       </div>
 
+ <!-- =================================================
+           CHAPTER 05
+      ================================================= -->
+
+      <div class="event chapter-five">
+
+        <small>
+          Chapter 05
+        </small>
+
+        <h3>
+          What Comes Next? ❤️
+        </h3>
+
+        <p>
+
+          We've already lived through a beautiful
+          chapter together.
+
+          But maybe our story doesn't have to end here.
+
+          <br><br>
+
+          <strong>
+            Do you want to write another chapter with me?
+          </strong>
+
+        </p>
+
+
+        <!-- CHOICE BUTTONS -->
+
+        <div class="chapter-choice">
+
+          <button
+            class="yes-btn"
+            onclick="chooseChapter(true)"
+          >
+            Yes, let's continue ❤️
+          </button>
+
+
+          <button
+            class="no-btn"
+            onclick="chooseChapter(false)"
+          >
+            Let this be our ending 🤍
+          </button>
+
+        </div>
+
+
+        <!-- =================================================
+             YES RESULT
+        ================================================= -->
+
+        <div
+          id="yes-result"
+          class="chapter-result yes-result"
+        >
+
+          <div class="result-heart">
+            ♥
+          </div>
+
+
+          <h3>
+            Chapter 05 — Our Next Chapter
+          </h3>
+
+
+          <p>
+
+            Then let's not call this the end.
+
+            Let's call it the beginning of everything
+            we haven't lived yet.
+
+            <br><br>
+
+            More sunsets.
+
+            More silly conversations.
+
+            More memories.
+
+            More reasons to choose each other.
+
+            <br><br>
+
+            <strong>
+              If you say yes, I'll meet you in the next chapter. ❤️
+            </strong>
+
+          </p>
+
+
+          <div class="chapter-signature">
+            To be continued… ♾️❤️
+          </div>
+
+        </div>
+
+
+        <!-- =================================================
+             NO RESULT
+        ================================================= -->
+
+        <div
+          id="no-result"
+          class="chapter-result no-result"
+        >
+
+          <div class="result-heart">
+            ♡
+          </div>
+
+
+          <h3>
+            Our Beautiful Ending
+          </h3>
+
+
+          <p>
+
+            Then maybe this is where our story
+            gently comes to an end.
+
+            <br><br>
+
+            Not every beautiful story needs to last forever
+            to have been real, meaningful, and unforgettable.
+
+            <br><br>
+
+            Thank you for every smile, every memory,
+            every moment, and every little piece of happiness
+            we shared.
+
+            <br><br>
+
+            <strong>
+              Wherever life takes us, I'll always be grateful
+              that our paths once crossed. 🤍
+            </strong>
+
+          </p>
+
+
+          <div class="chapter-signature">
+            The End — but never forgotten. ✨
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
 
   </section>
-
-</div>
 
 
 <!-- =========================
@@ -1278,6 +1595,65 @@ button{
 
 
 <script>
+/* =====================================================
+   CHAPTER 05 CHOICE
+===================================================== */
+
+function chooseChapter(wantsToContinue) {
+
+  const yesResult =
+    document.getElementById("yes-result");
+
+  const noResult =
+    document.getElementById("no-result");
+
+
+  /* Hide both */
+
+  yesResult.classList.remove("show");
+
+  noResult.classList.remove("show");
+
+
+  /* YES */
+
+  if (wantsToContinue) {
+
+    yesResult.classList.add("show");
+
+
+    setTimeout(() => {
+
+      yesResult.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+    },100);
+
+  }
+
+
+  /* NO */
+
+  else {
+
+    noResult.classList.add("show");
+
+
+    setTimeout(() => {
+
+      noResult.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+    },100);
+
+  }
+
+}
+
 
 /* =========================
    ALBUM PHOTOS
