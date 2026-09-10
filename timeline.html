@@ -3,29 +3,265 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Timeline</title>
+
+  <title>Our Timeline | Mebisha ♡ Bibek</title>
+  <meta name="description" content="A timeline of the beautiful moments, memories, and milestones that became our love story.">
+  <meta name="theme-color" content="#b85c70">
+
   <link rel="stylesheet" href="style.css">
+
   <style>
-    .timeline { position: relative; max-width: 700px; margin: 0 auto; padding: 20px 0; }
-    .timeline::after { content: ''; position: absolute; width: 3px; background: var(--primary-color); top: 0; bottom: 0; left: 50%; margin-left: -1.5px; }
-    .t-item { padding: 10px 30px; position: relative; width: 50%; box-sizing: border-box; }
-    .t-item.left { left: 0; text-align: right; }
-    .t-item.right { left: 50%; text-align: left; }
-    .t-content { padding: 20px; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; backdrop-filter: blur(10px); }
-    .t-content h3 { color: var(--primary-color); font-family: var(--font-heading); font-size: 1.8rem; }
-    .t-content span { font-size: 0.8rem; color: var(--text-muted); display: block; margin-bottom: 8px; }
-    @media (max-width: 600px) {
-      .timeline::after { left: 20px; }
-      .t-item { width: 100%; padding-left: 50px; padding-right: 10px; }
-      .t-item.right, .t-item.left { left: 0; text-align: left; }
+    /* =========================
+       TIMELINE
+    ========================= */
+
+    .timeline {
+      position: relative;
+      max-width: 850px;
+      margin: 40px auto 80px;
+      padding: 20px 0;
+    }
+
+    .timeline::after {
+      content: "";
+      position: absolute;
+      width: 3px;
+      background: var(--primary-color);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1.5px;
+      border-radius: 10px;
+      opacity: 0.8;
+    }
+
+    .t-item {
+      position: relative;
+      width: 50%;
+      padding: 15px 40px;
+      box-sizing: border-box;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .t-item::after {
+      content: "♡";
+      position: absolute;
+      width: 34px;
+      height: 34px;
+      line-height: 34px;
+      text-align: center;
+      background: var(--card-bg);
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      border-radius: 50%;
+      top: 28px;
+      z-index: 2;
+      font-size: 15px;
+      box-shadow: 0 0 0 6px rgba(255,255,255,0.03);
+    }
+
+    .t-item.left {
+      left: 0;
+      text-align: right;
+    }
+
+    .t-item.right {
+      left: 50%;
+      text-align: left;
+    }
+
+    .t-item.left::after {
+      right: -17px;
+    }
+
+    .t-item.right::after {
+      left: -17px;
+    }
+
+    .t-content {
+      position: relative;
+      padding: 25px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .t-content::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.05),
+        transparent
+      );
+      pointer-events: none;
+    }
+
+    .t-content:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary-color);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+    }
+
+    .t-content .date {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary-color);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .t-content .category {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .t-content h3 {
+      color: var(--primary-color);
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      margin: 5px 0 10px;
+    }
+
+    .t-content p {
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .t-icon {
+      font-size: 1.4rem;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    /* Special milestone */
+    .t-item.special .t-content {
+      border: 1px solid var(--primary-color);
+      box-shadow: 0 0 25px rgba(184,92,112,0.12);
+    }
+
+    .t-item.special::after {
+      content: "♥";
+      background: var(--primary-color);
+      color: white;
+    }
+
+    /* Anniversary */
+    .anniversary {
+      margin-top: 20px;
+    }
+
+    .anniversary .t-content {
+      padding: 30px;
+    }
+
+    .anniversary h3 {
+      font-size: 2rem;
+    }
+
+    /* Future chapter */
+    .future .t-content {
+      border-style: dashed;
+    }
+
+    /* Fade animation */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      .timeline {
+        margin-top: 30px;
+        padding-left: 0;
+      }
+
+      .timeline::after {
+        left: 20px;
+        margin-left: -1.5px;
+      }
+
+      .t-item,
+      .t-item.left,
+      .t-item.right {
+        width: 100%;
+        left: 0;
+        padding-left: 55px;
+        padding-right: 10px;
+        text-align: left;
+      }
+
+      .t-item.left::after,
+      .t-item.right::after {
+        left: 3px;
+        right: auto;
+      }
+
+      .t-content {
+        padding: 20px;
+      }
+
+      .t-content h3 {
+        font-size: 1.55rem;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div id="password-overlay"><div class="pass-card"><h2>Welcome My Love 💕</h2><input type="password" id="pass-input"><button onclick="checkPassword()">Unlock</button><p id="pass-error" class="error-msg">Incorrect password!</p></div></div>
+
+  <!-- =========================
+       PASSWORD
+  ========================= -->
+
+  <div id="password-overlay">
+    <div class="pass-card">
+      <h2>Welcome My Love 💕</h2>
+
+      <input
+        type="password"
+        id="pass-input"
+        placeholder="Enter our password"
+      >
+
+      <button onclick="checkPassword()">Unlock</button>
+
+      <p id="pass-error" class="error-msg">
+        Incorrect password!
+      </p>
+    </div>
+  </div>
+
+
+  <!-- =========================
+       HEADER
+  ========================= -->
 
   <header>
-    <a href="index.html" class="logo">Forever Yours ✨</a>
+    <a href="index.html" class="logo">
+      Forever Yours ✨
+    </a>
+
     <nav>
       <a href="index.html">Memories</a>
       <a href="letter.html">Letter</a>
@@ -36,42 +272,575 @@
     </nav>
   </header>
 
-  <div class="container">
-    <h1 class="page-title">⏳ Our Love Timeline</h1>
-    <p class="page-subtitle">How our beautiful story unfolded step by step.</p>
+
+  <!-- =========================
+       MAIN
+  ========================= -->
+
+  <main class="container">
+
+    <h1 class="page-title">
+      Our Love Timeline
+    </h1>
+
+    <p class="page-subtitle">
+      From the very first conversation to every little moment
+      that made us <strong>us</strong>. ❤️
+    </p>
+
+
+    <!-- =========================
+         TIMELINE
+    ========================= -->
 
     <div class="timeline">
+
+
+      <!-- 01 -->
       <div class="t-item left">
         <div class="t-content">
-          <span>Day We Met</span>
-          <h3>The First Spark</h3>
-          <p>The unforgettable moment our paths crossed for the very first time.</p>
+
+          <span class="t-icon">📸</span>
+
+          <span class="category">
+            Social Media • Instagram
+          </span>
+
+          <span class="date">
+            [Instagram Date]
+          </span>
+
+          <h3>The First Instagram Conversation</h3>
+
+          <p>
+            It started with a simple conversation on Instagram,
+            but neither of us knew that those first few messages
+            would eventually become such a beautiful story.
+          </p>
+
         </div>
       </div>
+
+
+      <!-- 02 -->
       <div class="t-item right">
         <div class="t-content">
-          <span>First Conversation</span>
-          <h3>Late Night Talks</h3>
-          <p>Talking for hours without realizing how quickly time was passing.</p>
+
+          <span class="t-icon">💬</span>
+
+          <span class="category">
+            Social Media • Facebook
+          </span>
+
+          <span class="date">
+            [Facebook Date]
+          </span>
+
+          <h3>Our First Facebook Conversation</h3>
+
+          <p>
+            Another little conversation, another reason to smile.
+            Slowly, talking to you started becoming one of my
+            favorite parts of the day.
+          </p>
+
         </div>
       </div>
+
+
+      <!-- 03 -->
       <div class="t-item left">
         <div class="t-content">
-          <span>First Date</span>
-          <h3>Butterflies Everywhere</h3>
-          <p>Nervous laughter, shared smiles, and the moment I knew you were special.</p>
+
+          <span class="t-icon">👻</span>
+
+          <span class="category">
+            Social Media • Snapchat
+          </span>
+
+          <span class="date">
+            [Snapchat Date]
+          </span>
+
+          <h3>Snapchat Moments</h3>
+
+          <p>
+            Random snaps, silly moments, little updates and
+            countless reasons to keep checking my phone.
+          </p>
+
         </div>
       </div>
+
+
+      <!-- 04 -->
       <div class="t-item right">
         <div class="t-content">
-          <span>1st Anniversary</span>
-          <h3>Here We Are</h3>
-          <p>Celebrating 365 days of love, growth, and endless happiness.</p>
+
+          <span class="t-icon">🎵</span>
+
+          <span class="category">
+            Social Media • TikTok
+          </span>
+
+          <span class="date">
+            [TikTok Date]
+          </span>
+
+          <h3>Our TikTok Era</h3>
+
+          <p>
+            From sending videos to laughing at random things,
+            TikTok somehow became another little part of our story.
+          </p>
+
         </div>
       </div>
+
+
+      <!-- 05 -->
+      <div class="t-item left special">
+        <div class="t-content">
+
+          <span class="t-icon">✨</span>
+
+          <span class="category">
+            The Beginning
+          </span>
+
+          <span class="date">
+            [First Meet Date]
+          </span>
+
+          <h3>The Day We First Met</h3>
+
+          <p>
+            The day our online conversations became a real-life
+            memory. The first time I saw you, everything suddenly
+            felt a little more real.
+          </p>
+
+        </div>
+      </div>
+
+
+      <!-- 06 -->
+      <div class="t-item right">
+        <div class="t-content">
+
+          <span class="t-icon">🦋</span>
+
+          <span class="category">
+            First Move
+          </span>
+
+          <span class="date">
+            [First Move Date]
+          </span>
+
+          <h3>The First Move</h3>
+
+          <p>
+            Someone had to take the first step...
+            and that little step changed everything between us.
+          </p>
+
+        </div>
+      </div>
+
+
+      <!-- 07 -->
+      <div class="t-item left">
+        <div class="t-content">
+
+          <span class="t-icon">💗</span>
+
+          <span class="category">
+            First Date
+          </span>
+
+          <span class="date">
+            [First Date]
+          </span>
+
+          <h3>Our First Date</h3>
+
+          <p>
+            Nervous smiles, endless talking, little moments,
+            and that feeling of not wanting the day to end.
+          </p>
+
+        </div>
+      </div>
+
+
+      <!-- 08 -->
+      <div class="t-item right special">
+        <div class="t-content">
+
+          <span class="t-icon">💋</span>
+
+          <span class="category">
+            A Moment To Remember
+          </span>
+
+          <span class="date">
+            [First Kiss Date]
+          </span>
+
+          <h3>Our First Kiss</h3>
+
+          <p>
+            One tiny moment that somehow said more than
+            a thousand words ever could. A memory I will
+            always carry with me.
+          </p>
+
+        </div>
+      </div>
+
+
+      <!-- 09 -->
+      <div class="t-item left">
+        <div class="t-content">
+
+          <span class="t-icon">❤️</span>
+
+          <span class="category">
+            Our Relationship
+          </span>
+
+          <span class="date">
+            [Official Relationship Date]
+          </span>
+
+          <h3>When We Became Us</h3>
+
+          <p>
+            The day our story became official.
+            Two people, one story, and a whole future
+            waiting to be written.
+          </p>
+
+        </div>
+      </div>
+
+
+      <!-- 10 -->
+      <div class="t-item right">
+        <div class="t-content">
+
+          <span class="t-icon">🌙</span>
+
+          <span class="category">
+            Late Night Memories
+          </span>
+
+          <span class="date">
+            [Special Date]
+          </span>
+
+          <h3>Our Late Night Talks</h3>
+
+          <p>
+            Hours of talking about everything and nothing,
+            forgetting about the time because being together
+            somehow made every minute disappear.
+          </p>
+
+        </div>
+      </div>
+
+
+      <!-- 11 -->
+      <div class="t-item left">
+        <div class="t-content">
+
+          <span class="t-icon">🎶</span>
+
+          <span class="category">
+            Our First Concert
+          </span>
+
+          <span class="date">
+            [Concert Date]
+          </span>
+
+          <h3>Our First Concert Together</h3>
+
+          <p>
+            Our first concert, our first shared music memory,
+            and one more beautiful moment added to our story.
+            Some songs will forever remind me of you.
+          </p>
+
+        </div>
+      </div>
+
+
+      <!-- 12 -->
+      <div class="t-item right">
+        <div class="t-content">
+
+          <span class="t-icon">📷</span>
+
+          <span class="category">
+            First Favorite Memory
+          </span>
+
+          <span class="date">
+            [Date]
+          </span>
+
+          <h3>The Picture I'll Always Keep</h3>
+
+          <p>
+            One picture, one moment, one smile...
+            somehow it became one of those memories
+            I never want to forget.
+          </p>
+
+        </div>
+      </div>
+
+
+      <!-- 13 -->
+      <div class="t-item left">
+        <div class="t-content">
+
+          <span class="t-icon">🥰</span>
+
+          <span class="category">
+            Little Things
+          </span>
+
+          <span class="date">
+            [Date]
+          </span>
+
+          <h3>The Little Things</h3>
+
+          <p>
+            The random calls, good morning messages,
+            goodnight texts, inside jokes and tiny surprises
+            that slowly became our everyday happiness.
+          </p>
+
+        </div>
+      </div>
+
+
+      <!-- 14 -->
+      <div class="t-item right">
+        <div class="t-content">
+
+          <span class="t-icon">🌧️</span>
+
+          <span class="category">
+            Growing Together
+          </span>
+
+          <span class="date">
+            [Date]
+          </span>
+
+          <h3>Through The Hard Days</h3>
+
+          <p>
+            Not every day was perfect, but every difficult
+            moment taught us something about love, patience,
+            understanding and each other.
+          </p>
+
+        </div>
+      </div>
+
+
+      <!-- 15 -->
+      <div class="t-item left">
+        <div class="t-content">
+
+          <span class="t-icon">🌹</span>
+
+          <span class="category">
+            Special Memory
+          </span>
+
+          <span class="date">
+            [Special Date]
+          </span>
+
+          <h3>A Day I'll Never Forget</h3>
+
+          <p>
+            Some days become memories.
+            Some memories become stories.
+            And some stories become a part of who we are.
+          </p>
+
+        </div>
+      </div>
+
+
+      <!-- 16 -->
+      <div class="t-item right special anniversary">
+        <div class="t-content">
+
+          <span class="t-icon">💍</span>
+
+          <span class="category">
+            Our Anniversary
+          </span>
+
+          <span class="date">
+            [ANNIVERSARY DATE]
+          </span>
+
+          <h3>Our 1st Anniversary ❤️</h3>
+
+          <p>
+            One beautiful year of memories, laughter,
+            arguments, forgiveness, adventures, love
+            and countless little moments.
+          </p>
+
+          <p style="margin-top:12px;">
+            <strong>
+              365 days down. A lifetime of memories to go.
+            </strong>
+          </p>
+
+        </div>
+      </div>
+
+
+      <!-- 17 -->
+      <div class="t-item left">
+        <div class="t-content">
+
+          <span class="t-icon">📝</span>
+
+          <span class="category">
+            Everything We Became
+          </span>
+
+          <span class="date">
+            Chapter 01–04
+          </span>
+
+          <h3>Our Story So Far</h3>
+
+          <p>
+            From strangers to conversations,
+            conversations to friendship,
+            friendship to love...
+            and love to becoming a part of each other's lives.
+          </p>
+
+        </div>
+      </div>
+
+
+      <!-- 18 -->
+      <div class="t-item right future">
+        <div class="t-content">
+
+          <span class="t-icon">🔮</span>
+
+          <span class="category">
+            Chapter 05
+          </span>
+
+          <span class="date">
+            Our Next Chapter
+          </span>
+
+          <h3>What Comes Next?</h3>
+
+          <p>
+            Maybe this isn't the end of our story.
+            Maybe there are still countless chapters
+            waiting for us.
+          </p>
+
+          <p style="margin-top:12px;">
+            <strong>
+              If you choose me, let's write another chapter together. ❤️
+            </strong>
+          </p>
+
+        </div>
+      </div>
+
+
+      <!-- 19 -->
+      <div class="t-item left future">
+        <div class="t-content">
+
+          <span class="t-icon">🌅</span>
+
+          <span class="category">
+            Future
+          </span>
+
+          <span class="date">
+            One Day...
+          </span>
+
+          <h3>More Firsts To Come</h3>
+
+          <p>
+            More first dates, more concerts, more trips,
+            more photographs, more midnight conversations,
+            more birthdays, more anniversaries...
+            and hopefully many more moments with you.
+          </p>
+
+        </div>
+      </div>
+
+
+      <!-- 20 -->
+      <div class="t-item right special future">
+        <div class="t-content">
+
+          <span class="t-icon">♾️</span>
+
+          <span class="category">
+            Our Forever
+          </span>
+
+          <span class="date">
+            To Be Written...
+          </span>
+
+          <h3>Not The End ❤️</h3>
+
+          <p>
+            Our timeline doesn't have to end here.
+            The best chapters may still be waiting for us.
+          </p>
+
+          <p style="margin-top:12px;">
+            <strong>
+              Wherever life takes us,
+              I'll always be grateful that our paths crossed.
+            </strong>
+          </p>
+
+        </div>
+      </div>
+
     </div>
-  </div>
+
+  </main>
+
+
+  <!-- =========================
+       SCRIPT
+  ========================= -->
 
   <script src="script.js"></script>
+
 </body>
 </html>
